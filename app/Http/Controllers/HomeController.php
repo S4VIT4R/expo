@@ -19,6 +19,7 @@ class HomeController extends Controller
     public function guardarpersona(Request $request){
         $persona = new Personas();
 
+        // $nombre = htmlspecialchars_decode($request->nombre, ENT_QUOTES);
         $persona->nombre=$request->nombre;
         $persona->edad=$request->edad;
         $persona->save();
@@ -36,7 +37,23 @@ class HomeController extends Controller
         $persona = Personas::find($id);
         $persona->delete();
 
-        $personas = Cursos::all();
+        $personas = Personas::all();
+        return view('auth.verusuarios',compact('personas'));
+
+    }
+
+    public function editardatos($id){
+        $persona = Personas::all()->where('id',$id);
+        return view('auth.editar',compact('persona'));
+    }
+
+    public function guardardatos(Request $request, Personas $persona){
+        $persona->nombre = $request->nombre;
+        $persona->edad = $request->edad;
+        $persona->save();
+
+        $personas = Personas::all();
+
         return view('auth.verusuarios',compact('personas'));
 
     }

@@ -13,7 +13,9 @@
         <div class="m-auto">
             <label class="ml-5" for="nombre">Nombre</label>
             <br>
-            <input class="ml-5 shadow rounded w-3/4" type="text" name="nombre" placeholder="Ingrese su nombre" required>
+            <textarea  name="nombre" id="nombre" rows="10" cols="80">
+                
+            </textarea>
         </div>
         <div>
             <label class="ml-5" for="edad">Edad</label><br>
@@ -27,7 +29,14 @@
         </a>
     </div>
 </form>
+<script src="he.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+var editor = CKEDITOR.replace( 'nombre' );
+CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
 
+</script>
     
     
 @endsection

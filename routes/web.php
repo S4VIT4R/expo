@@ -23,3 +23,10 @@ Route::post('/usuarios/agregarpersona/guardarpersona', [HomeController::class, '
 Route::get('/usuarios/verpersonas', [HomeController::class,'verpersonas'])->name('verpersonas');
 
 Route::delete('/usuarios/eliminarusuario/{id}', [HomeController::class,'eliminarusuario'])->name('eliminarusuario');
+
+Route::get('/usuarios/verpersonas/editar/{id}', [HomeController:: class,'editardatos'])
+->name('editardatos');
+
+Route::put('/usuarios/verpersonas/guardardatoseditados/{persona}', [HomeController:: class,'guardardatos'])
+->name('guardardatos');
+
